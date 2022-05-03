@@ -1,0 +1,19 @@
+body {
+  background-color: #000000;
+  /* background-color: #393f4b; */
+  margin: 0;
+  font-family:"SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","Helvetica Neue","Helvetica","Arial",sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto; 
+}

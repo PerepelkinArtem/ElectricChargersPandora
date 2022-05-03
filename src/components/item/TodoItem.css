@@ -1,0 +1,99 @@
+.TodoItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0;
+    padding: 15px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: antiquewhite;
+    background: rgb(68, 68, 68);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.TodoItem:hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.TodoItem:active {
+    color: #000
+}
+
+.TodoItem:active:after {
+    background: transparent;
+}
+
+.TodoItem:hover:before {
+    opacity: 1;
+}
+
+.TodoItem:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.Remove {
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+.Remove:before,
+.Remove:after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 4px;
+    background: rgb(177, 176, 176);
+}
+
+.Remove:before {
+    transform: rotate(45deg);
+}
+
+.Remove:after {
+    transform: rotate(-45deg);
+}
+
+.Sentence {
+    display: flex;
+    align-items: center;
+}

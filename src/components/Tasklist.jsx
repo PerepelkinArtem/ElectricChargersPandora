@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux/es/exports'
+import { addTodo } from '../reduxToolkit/features/todo/todoSlice'
+import { v4 } from 'uuid'
+
 import TodoItem from './item/TodoItem'
 import './Tasklist.css'
 
@@ -21,6 +25,27 @@ const data = [
 ]
 
 const Tasklist = () => {
+
+    const dispach = useDispatch()
+    const [todoValue, setTodoValue] = React.useState('')
+
+    const addTodoHandler = () => {
+        const todo = {
+            id: v4(),
+            text: '',
+            completed: false,
+        }
+    }
+
+
+
+
+
+
+
+
+
+
     const [todobase, setTodobase] = useState(data)
 
     const changeTodo = id => {

@@ -130,3 +130,7 @@
 .completed:hover {
   background-position: 0;
 }
+
+.done {
+  text-decoration: line-through;
+}

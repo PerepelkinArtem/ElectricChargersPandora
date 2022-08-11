@@ -15,6 +15,8 @@ const TodoItem = ({ todo }) => {
         dispatch(removeTodo(id))
     }
 
+    console.log(todo)
+
     return <>
         <button className='TodoItem'>
             <div
@@ -22,7 +24,7 @@ const TodoItem = ({ todo }) => {
                 onClick={() => toggleTodoHandler(todo.id)}>
                 Complete
             </div>
-            <div className={todo.completed ? 'Competed' : ''}>
+            <div className={todo.completed ? 'done' : ''}>
                 {todo.text}
             </div>
             <button className='btn remove'

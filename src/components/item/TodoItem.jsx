@@ -22,14 +22,14 @@ const TodoItem = ({ todo }) => {
             <div
                 className='btn completed'
                 onClick={() => toggleTodoHandler(todo.id)}>
-                Complete
+                СТАРТ
             </div>
             <div className={todo.completed ? 'done' : ''}>
                 {todo.text}
             </div>
             <button className='btn remove'
                 onClick={() => remoteTodoHandler(todo.id)}>
-                Delete
+                СТОП
             </button>
         </button>
     </>

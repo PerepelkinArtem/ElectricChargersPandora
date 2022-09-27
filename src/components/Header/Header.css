@@ -1,0 +1,21 @@
+.blueLine {
+    background: #0088CC;
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0px 20px;
+    line-height: 30px;
+    color: #ffffff;
+    font-size: 13px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+.blueLine a {
+    color: #ffffff;
+    text-decoration: none
+}
+
+.headerLogo {
+    height: 138px;
+    padding: 20 auto; 
+}

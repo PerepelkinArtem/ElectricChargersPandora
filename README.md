@@ -1,5 +1,3 @@
-This is a To Do list based on React, Redux Toolkit.
+UI
 
-npm i uuid - for id
-
-deploy: https://to-do-in-black-react-github-io.vercel.app/
+deploy: https://electric-chargers-pandora.vercel.app/

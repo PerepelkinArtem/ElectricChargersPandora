@@ -16,6 +16,10 @@
 }
 
 .headerLogo {
-    height: 138px;
+    height: 70px;
     padding: 20 auto; 
+}
+
+.headerLogo img {
+    
 }

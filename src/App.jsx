@@ -11,6 +11,7 @@ function App() {
     <div className="App">
       <Header />
       <Station />
+      <Station />
       <body>
         <Tasklist />
       </body>

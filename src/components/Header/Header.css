@@ -24,16 +24,13 @@
     color: #ffffff;
     padding-right: 10px;
 }
+/*END OF BLUELINE*/
 
-/*START OF BLUELINE*/
-
+/*START OF PANDORA LOGO*/
 .headerLogo {
-    max-width: 1170px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
     height: 70px;
-    padding: 20 auto;
 }
-
-.headerLogo .imgLogo {
-    margin: auto;
-}
+/*END OF PANDORA LOGO*/

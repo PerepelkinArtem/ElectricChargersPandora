@@ -1,24 +1,37 @@
+/*START OF BLUELINE*/
 .blueLine {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
     background: #0088CC;
     width: 100%;
     margin: 0 auto;
-    padding: 0px 20px;
     line-height: 30px;
     font-size: 13px;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
 .blueLine a {
-    max-width: 1170px;
     color: #ffffff;
-    text-decoration: none
+    text-decoration: none;
 }
+
+.blueLine .userArea {
+    display: flex;
+    padding-top: 5px;
+}
+
+.blueLine .userArea span {
+    color: #ffffff;
+    padding-right: 10px;
+}
+
+/*START OF BLUELINE*/
 
 .headerLogo {
     max-width: 1170px;
     margin: 0 auto;
     height: 70px;
-    padding: 20 auto; 
+    padding: 20 auto;
 }
 
 .headerLogo .imgLogo {

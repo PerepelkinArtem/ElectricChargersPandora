@@ -1,0 +1,30 @@
+.mainMenu ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mainMenu ul li {
+  background-color: #dfdfdf;
+  padding: 13px 30px;
+  border-radius: 8px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.mainMenu ul li:hover {
+  background-color: darken(#f9f9f9, 2%);
+}
+
+.mainMenu ul li:active {
+  background-color: darken(#f9f9f9, 5%);
+}
+
+.mainMenu ul li .active {
+  background-color: #505050;
+  color: #fff;
+}

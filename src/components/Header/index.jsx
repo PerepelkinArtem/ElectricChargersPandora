@@ -16,9 +16,11 @@ const Header = () => {
                     </div>
                 </Link>
             </div>
-            <div className="headerLogo">
-                <img className="imgLogo" src="/img/logosticky-w.png" alt='LogoPandora' />
-            </div>
+            <Link to='/'>
+                <div className="headerLogo">
+                    <img className="imgLogo" src="/img/logosticky-w.png" alt='LogoPandora' />
+                </div>
+            </Link>
         </header>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styles from './Home.module.css'
-import Station from '../../components/Station/Station'
+import Station from '../../components/Station'
 
 const Home = () => {
     return (

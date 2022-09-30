@@ -5,7 +5,7 @@ import './Station.css'
 const Station = () => {
 
     return <>
-        <button className='TodoItem'>
+        <button className='station'>
             <span>СТАНЦИЯ №1</span>
             <div className='StatusStation'>
                 <span>Индикация1</span>
@@ -13,17 +13,14 @@ const Station = () => {
                 <span>Индикация3</span>
             </div>
             <div className='StartStopButtons'>
-                <div
+                <button
                     className='btn completed'
                     onClick>
                     СТАРТ
-                </div>
-                {/* <div className={todo.completed ? 'done' : ''}>
-                {todo.text}
-            </div> */}
+                </button>
                 <button className='btn unlock'
                     onClick>
-                    ЗАБЛОКИРОВАТЬ
+                    РАЗБЛОКИРОВАТЬ
                 </button>
                 <button className='btn remove'
                     onClick>

@@ -1,9 +1,12 @@
 import React from 'react'
-import './App.css'
+import { Route, Routes } from 'react-router-dom'
 
+import './App.css'
 import Header from './components/Header/Header'
-import Station from './components/Station/Station'
 import Menu from './components/Menu/Menu'
+import NoMatchRoute from './pages/NoMatchRoute'
+import Login from './pages/Login'
+import Home from './pages/Home'
 
 function App() {
 
@@ -11,11 +14,11 @@ function App() {
     <div className="App">
       <Header />
       <Menu items={['Просмотр станций', 'Управление аккаунтом', 'Контакты']} />
-      <div className="mainStation">
-        <Station />
-        <Station />
-        <Station />
-      </div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='*' element={<NoMatchRoute />} />
+      </Routes>
     </div >
   );
 }

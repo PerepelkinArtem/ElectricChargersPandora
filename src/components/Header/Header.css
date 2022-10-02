@@ -24,6 +24,11 @@
     color: #ffffff;
     padding-right: 10px;
 }
+
+.blueLine .userArea .stationLogo {
+    padding-left: 15px;
+    filter: hue-rotate();
+}
 /*END OF BLUELINE*/
 
 /*START OF PANDORA LOGO*/

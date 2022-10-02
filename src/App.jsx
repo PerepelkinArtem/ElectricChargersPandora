@@ -9,11 +9,10 @@ import Login from './pages/Login'
 import Home from './pages/Home'
 
 function App() {
-
   return (
     <div className="App">
       <Header />
-      <Menu items={['Просмотр станций', 'Управление аккаунтом', 'Контакты']} />
+      {/* <Menu items={['Просмотр станций', 'Управление аккаунтом']} /> */}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />

@@ -5,7 +5,7 @@ import './Station.css'
 const Station = () => {
 
     return <>
-        <button className='station'>
+        <div className='station'>
             <span>СТАНЦИЯ №1</span>
             <div className='StatusStation'>
                 <span>Индикация1</span>
@@ -30,7 +30,7 @@ const Station = () => {
             <div className=''>
 
             </div>
-        </button>
+        </div>
     </>
 }
 

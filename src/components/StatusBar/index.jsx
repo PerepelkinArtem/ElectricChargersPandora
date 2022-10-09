@@ -2,6 +2,13 @@ import React from 'react'
 
 import './StatusBar.css'
 import StatusBarButton from './statusBarButton'
+import StatusBarDiagramm from './statusBarDiagramm'
+
+const diagrammData = {
+    percentage: 70,
+    borderThickness: '20px',
+    color: 'blue',
+}
 
 const StatusBar = () => {
     return (
@@ -14,7 +21,7 @@ const StatusBar = () => {
             <div className='statusBarConnector'>
                 <div className='statusBarConnectorHeader'>
                     <div className='statusBarConnectorHeader__connector'>
-                        <img with={15} height={15} className='userLogo' src='/img/connector.svg' alt='connector picture' />
+                        <img with={15} height={15} className='userLogo' src='/img/connector.svg' alt='connector' />
                         <span>Номер коннектора: 1</span>
                     </div>
                     <img with={15} height={15} className='userLogo' src='/img/workingStatus.png' alt='workingStatis' />
@@ -29,8 +36,8 @@ const StatusBar = () => {
                         <span>CCS Combo 2</span>
                     </div>
                 </div>
-                <div className='diagramm'>
-                    
+                <div className='statusBarDiagramm'>
+                    <StatusBarDiagramm />
                 </div>
                 <div className='statusBarButtons'>
                     <StatusBarButton name={1} />

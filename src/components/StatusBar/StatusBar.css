@@ -74,6 +74,13 @@
     flex-direction: column;
 }
 
+/*DIAGRAMM*/
+.statusBarDiagramm {
+    width: 100px;
+    display: flex;
+}
+/*DIAGRAMM*/
+
 .statusBarButtons {
     display: flex;
     justify-content: space-around;

@@ -9,21 +9,19 @@ const Header = () => {
         <header>
             <div className="blueLine">
                 <a href="tel:+78007001718" >8 (800) 700-17-18 (горячая линия техподдержки)</a>
+                <Link to='/'>
+                    <img with={215} className="userLogo" src="/img/PandoraLogo.svg" alt="PandoraLogo" />
+                </Link>
                 <div className="userArea">
-                    <span>Perepelkin Artem</span>
+                    <span>Перепелкин Артем</span>
                     <Link to='/login'>
                         <img with={25} height={25} className="userLogo" src="/img/user.svg" alt="UserLogo" />
                     </Link>
                     <Link to='/'>
-                        <img with={25} height={25} className="stationLogo" src="/img/charging-station-white.png" alt="StationLogo" />
+                        <img with={25} height={25} className="stationLogo" src="/img/charging-station.png" alt="StationLogo" />
                     </Link>
                 </div>
             </div>
-            <Link to='/'>
-                <div className="headerLogo">
-                    <img className="imgLogo" src="/img/logosticky-w.png" alt='LogoPandora' />
-                </div>
-            </Link>
         </header>
     )
 }

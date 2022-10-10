@@ -8,7 +8,6 @@ const Home = () => {
     return (
         <div className={styles.mainStation}>
             <Station />
-            <Station />
             <StatusBar />
         </div>
     )

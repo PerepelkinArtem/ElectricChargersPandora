@@ -4,12 +4,6 @@ import './StatusBar.css'
 import StatusBarButton from './statusBarButton'
 import StatusBarDiagramm from './statusBarDiagramm'
 
-const diagrammData = {
-    percentage: 70,
-    borderThickness: '20px',
-    color: 'blue',
-}
-
 const StatusBar = () => {
     return (
         <div className='statusBar'>
@@ -26,23 +20,27 @@ const StatusBar = () => {
                     </div>
                     <img with={15} height={15} className='userLogo' src='/img/workingStatus.png' alt='workingStatis' />
                 </div>
-                <div className='statusBarConnectorInfo'>
-                    <div className='statusBarConnectorInfo__dimension'>
-                        <span>Напряжение:</span>
-                        <span>Тип разъема:</span>
+                <div className='statusBarConnectorWrapper'>
+                    <div className='statusBarConnectorInfo'>
+                        <div className='statusBarConnectorInfo__dimension'>
+                            <span>НАПРЯЖ</span>
+                            <span>РАЗЪЕМ</span>
+                        </div>
+                        <div className='statusBarConnectorInfo__value'>
+                            <span>DC</span>
+                            <span>CCS Combo 2</span>
+                        </div>
                     </div>
-                    <div className='statusBarConnectorInfo__value'>
-                        <span>DC</span>
-                        <span>CCS Combo 2</span>
+                    <div className='statusBarDiagramm'>
+                        <StatusBarDiagramm value={'220v'}/>
+                        <StatusBarDiagramm />
+                        <StatusBarDiagramm />
                     </div>
-                </div>
-                <div className='statusBarDiagramm'>
-                    <StatusBarDiagramm />
                 </div>
                 <div className='statusBarButtons'>
-                    <StatusBarButton name={1} />
-                    <StatusBarButton name={'Стоп'} />
-                    <StatusBarButton name={'Разблокировать'} />
+                    <StatusBarButton name={''} />
+                    <StatusBarButton name={''} />
+                    <StatusBarButton name={''} />
                 </div>
             </div>
         </div >

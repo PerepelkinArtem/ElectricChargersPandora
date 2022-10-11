@@ -33,14 +33,14 @@ const StatusBar = () => {
                     </div>
                     <div className='statusBarDiagramm'>
                         <StatusBarDiagramm value={'220v'}/>
-                        <StatusBarDiagramm />
-                        <StatusBarDiagramm />
+                        <StatusBarDiagramm value={'40%'}/>
+                        <StatusBarDiagramm value={'140kW'}/>
                     </div>
                 </div>
                 <div className='statusBarButtons'>
-                    <StatusBarButton name={''} />
-                    <StatusBarButton name={''} />
-                    <StatusBarButton name={''} />
+                    <StatusBarButton buttonName={'Старт'} />
+                    <StatusBarButton buttonName={'Разблокировать'} />
+                    <StatusBarButton buttonName={'Стоп'} />
                 </div>
             </div>
         </div >

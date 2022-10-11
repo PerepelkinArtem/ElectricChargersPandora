@@ -2,10 +2,10 @@ import React from 'react'
 
 import './statusBarButton.css'
 
-const StatusBarButton = () => {
+const StatusBarButton = ({buttonName}) => {
     return (
         <button className='mainButton'>
-            Разблокировать
+            {buttonName}
         </button>
     )
 }

@@ -8,7 +8,9 @@ const Header = () => {
     return (
         <header>
             <div className="blueLine">
-                <a href="tel:+78007001718" >8 (800) 700-17-18 (горячая линия техподдержки)</a>
+                <div className='telnumber'>
+                    <a href="tel:+78007001718">8 (800) 700-17-18 (горячая линия техподдержки)</a>
+                </div>
                 <div className='pandoraLogo'>
                     <Link to='/'>
                         <img with={215} className="pandoraLogo" src="/img/PandoraLogo.svg" alt="PandoraLogo" />

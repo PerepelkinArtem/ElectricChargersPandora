@@ -8,38 +8,35 @@ import NoMatchRoute from './pages/NoMatchRoute'
 import Login from './pages/Login'
 import Home from './pages/Home'
 
-const baseURL = 'https://622072c8ce99a7de1959cf52.mockapi.io/items'
+// const baseURL = 'https://622072c8ce99a7de1959cf52.mockapi.io/items'
+// const basePandorURL = 'http://web1.pandora.develop:5003'
 
 function App() {
 
-  const [items, setItems] = useState([])
+//   const [items, setItems] = useState([])
+  const [stations, setStt] = useState([])
 
-  // const [stations, setStt] = useState()
-  // service.post(`/api/login`, `{"login":"a.perepelkin","password":"3f86ou"}`).then(res => {
-  //   service.get(`/api/v1/getstations`).then(res => {
-  //     setStt(JSON.stringify(res.data));
-  //   });
-  // });
-  // console.log({ stations })
-
-  // for testing
-  // useEffect(() => {
-  //   const itemsResponce = axios.get(baseURL)
-  //   setItems(itemsResponce.data)
-  //   console.log({ itemsResponce })
-  // }, [])
-
-
-  //при первом рендере
   useEffect(() => {
-    fetch(baseURL)
-      .then((res) => res.json())
-      .then((json) => {
-        setItems(json)
-      });
-  }, [])
-  console.log(items)
+  service.post(`/api/login`, `{"login":"a.perepelkin","password":"3f86ou"}`).then(res => {
+    service.get(`/api/v1/getstations`).then(res => {
+      setStt(JSON.stringify(res.data, ['result']));
+    });
+  });
+}, [])
+
   // for testing
+  //Ok
+  // useEffect(() => {
+  //   fetch(baseURL)
+  //     .then((res) => res.json())
+  //     .then((json) => {
+  //       setItems(json)
+  //     });
+  // }, [])
+  // console.log(items)
+  //Ok
+  // for testing
+
 
   return (
     <div className="App">
@@ -62,9 +59,16 @@ function App() {
   );
 }
 
-// const service = axios.create({
-//   timeout: 10000, // request timeout
-//   withCredentials: true
-// });
+// useEffect(() => {
+//   const service = axios.create({
+//     timeout: 10000, // request timeout
+//     withCredentials: true
+//   });
+// }, [])
+
+const service = axios.create({
+  timeout: 10000, // request timeout
+  withCredentials: true
+});
 
 export default App

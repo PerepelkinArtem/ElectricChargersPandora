@@ -1,27 +1,35 @@
 /*START OF BLUELINE*/
 .blueLine {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
     background: #FCFCFC;
     width: 100%;
     margin: 0 auto;
     line-height: 30px;
     font-size: 13px;
+    position: relative;
 }
 
-.blueLine a {
-    color: #1A1A1A;
+.blueLine .telnumber {
+    padding-left: 40px;
+}
+
+.blueLine .telnumber a {
     text-decoration: none;
+    color: #1A1A1A;
 }
 
-.blueLine .pandoraLogo{
-    align-self: baseline;
+.blueLine .pandoraLogo {
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .blueLine .userArea {
     display: flex;
     padding-top: 5px;
+    padding-right: 40px;
 }
 
 .blueLine .userArea span {
@@ -33,13 +41,15 @@
     padding-left: 15px;
     filter: hue-rotate();
 }
+
 /*END OF BLUELINE*/
 
 /*START OF PANDORA LOGO*/
 .headerLogo {
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-around;
     align-items: center;
     height: 70px;
 }
+
 /*END OF PANDORA LOGO*/

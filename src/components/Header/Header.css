@@ -2,6 +2,7 @@
 .blueLine {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background: #FCFCFC;
     width: 100%;
     margin: 0 auto;
@@ -20,9 +21,13 @@
 }
 
 .blueLine .pandoraLogo {
-    margin-top: 5px;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+    margin-top: -13px;
+    /* margin-left: auto;
+    margin-right: auto; */
 
 }
 

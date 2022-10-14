@@ -19,10 +19,15 @@ function App() {
   useEffect(() => {
   service.post(`/api/login`, `{"login":"a.perepelkin","password":"3f86ou"}`).then(res => {
     service.get(`/api/v1/getstations`).then(res => {
-      setStt(JSON.stringify(res.data, ['result']));
+      setStt(JSON.stringify(res.data));
     });
   });
 }, [])
+
+let numberStation = stations[1];
+console.log (numberStation);
+
+// console.log (stations.result[1].id)
 
   // for testing
   //Ok

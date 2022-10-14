@@ -48,13 +48,3 @@
 }
 
 /*END OF BLUELINE*/
-
-/*START OF PANDORA LOGO*/
-.headerLogo {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 70px;
-}
-
-/*END OF PANDORA LOGO*/

@@ -24,8 +24,7 @@ function App() {
   });
 }, [])
 
-let numberStation = stations[1];
-console.log (numberStation);
+console.log (stations)
 
 // console.log (stations.result[1].id)
 

@@ -1,9 +1,13 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useContext } from 'react'
 
+import AuthContext from '../../context/AuthProvider'
 import './Form.css'
 
-const Form = (title, handleClick) => {
+import axios from '../../api/axios'
+const LOGIN_URL = '/api/login'
 
+const Form = () => {
+    const { setAuth } = useContext(AuthContext)
     const userRef = useRef()
     const errRef = useRef()
 
@@ -20,13 +24,45 @@ const Form = (title, handleClick) => {
         setErrMsg('');
     }, [user, pwd])
 
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(user, pwd);
         setUser('');
-        setPwd('');
-        setSuccess(true);
+        setPwd('');   
+        setSuccess(true);     
     }
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         const response = await axios.post(LOGIN_URL,
+    //             { "login": user, "password": pwd },
+    //             {
+    //                 withCredentials: true
+    //             }
+    //         );
+    //         console.log(JSON.stringify(response));
+    //         //console.log(JSON.stringify(response));
+    //         const accessToken = response.data.accessToken;
+    //         const roles = response.data.roles;
+    //         setAuth({ user, pwd, roles, accessToken });
+    //         setUser('');
+    //         setPwd('');
+    //         setSuccess(true);
+    //     } catch (err) {
+    //         if (!err.response) {
+    //             setErrMsg('No Server Response');
+    //         } else if (err.response.status === 400) {
+    //             setErrMsg('Missing Username or Password');
+    //         } else if (err.response.status === 401) {
+    //             setErrMsg('Unauthorized');
+    //         } else {
+    //             setErrMsg('Login Failed');
+    //         }
+    //         // errRef.current.focus();
+    //     }
+    // }
 
     return (
         <>
@@ -37,7 +73,8 @@ const Form = (title, handleClick) => {
                 </section>
             ) : (
                 <div className="login-box">
-                    <h2>Войти</h2>
+                    <p>Вход в <span>систему</span></p>
+                    <span className="login-box_info">Веедите данные для входав систему,<br />чтобы получить доступ</span>
                     <form onSubmit={handleSubmit}>
                         <div className="user-box">
                             <input
@@ -62,9 +99,10 @@ const Form = (title, handleClick) => {
                             <label>Пароль</label>
                         </div>
                         <button className="enterButtonForm">
-                            Войти
+                            Вход
                         </button>
                     </form>
+                    <span className="noPassword">Не помню пароль</span>
                 </div>
             )}
         </>

@@ -29,8 +29,8 @@ const Form = () => {
         e.preventDefault();
         console.log(user, pwd);
         setUser('');
-        setPwd('');   
-        setSuccess(true);     
+        setPwd('');
+        setSuccess(true);
     }
 
     // const handleSubmit = async (e) => {
@@ -74,7 +74,7 @@ const Form = () => {
             ) : (
                 <div className="login-box">
                     <p>Вход в <span>систему</span></p>
-                    <span className="login-box_info">Веедите данные для входав систему,<br />чтобы получить доступ</span>
+                    <span className="login-box_info">Введите данные для входав систему,<br />чтобы получить доступ</span>
                     <form onSubmit={handleSubmit}>
                         <div className="user-box">
                             <input
@@ -84,19 +84,25 @@ const Form = () => {
                                 autoComplete="off"
                                 onChange={(e) => setUser(e.target.value)}
                                 value={user}
+                                placeholder="a.perepelkin"
                                 required
+                                className="username-input"
                             />
                             <label>Имя пользователя</label>
                         </div>
                         <div className="user-box">
-                            <input
-                                type="password"
-                                id="password"
-                                onChange={e => setPwd(e.target.value)}
-                                value={pwd}
-                                required
-                            />
-                            <label>Пароль</label>
+                            {/* <div className="password-input"> */}
+                                <input
+                                    type="password"
+                                    id="password"
+                                    onChange={e => setPwd(e.target.value)}
+                                    value={pwd}
+                                    placeholder="**************"
+                                    required
+                                />
+                                {/* <img src="../../../public/img/loginIcon.svg" alt="" /> */}
+                                <label>Пароль</label>
+                            {/* </div> */}
                         </div>
                         <button className="enterButtonForm">
                             Вход

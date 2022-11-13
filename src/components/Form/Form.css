@@ -41,9 +41,9 @@
   align-items: center;
 }
 
-.login-box .user-box {
+/* .login-box .user-box {
   position: relative;
-}
+} */
 
 .login-box .user-box input {
   width: 290px;
@@ -53,11 +53,25 @@
   margin-bottom: 30px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.44);
-  outline:none;
+  outline: none;
 }
 
-.username-input {
-  
+.user-box {
+  position: relative;
+}
+
+.user-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 25px;
+  right: 7px;
+  margin: auto 0;
+  width: 16px;
+  height: 16px;
+  /* background: url("https://cdn0.iconfinder.com/data/icons/ThemeShock-credit-cards-icons/64/mastercard.png") no-repeat; */
+  background: url('/img/loginIcon.svg') no-repeat;
+  background-size: cover;
 }
 
 .login-box .user-box label {

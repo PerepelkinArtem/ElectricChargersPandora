@@ -90,19 +90,16 @@ const Form = () => {
                             />
                             <label>Имя пользователя</label>
                         </div>
-                        <div className="user-box">
-                            {/* <div className="password-input"> */}
-                                <input
-                                    type="password"
-                                    id="password"
-                                    onChange={e => setPwd(e.target.value)}
-                                    value={pwd}
-                                    placeholder="**************"
-                                    required
-                                />
-                                {/* <img src="../../../public/img/loginIcon.svg" alt="" /> */}
-                                <label>Пароль</label>
-                            {/* </div> */}
+                        <div className="user-box-password">
+                            <input
+                                type="password"
+                                id="password"
+                                onChange={e => setPwd(e.target.value)}
+                                value={pwd}
+                                placeholder="**************"
+                                required
+                            />
+                            <label>Пароль</label>
                         </div>
                         <button className="enterButtonForm">
                             Вход

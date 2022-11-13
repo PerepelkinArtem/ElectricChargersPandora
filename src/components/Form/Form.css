@@ -3,8 +3,9 @@
   top: 50%;
   left: 50%;
   width: 520px;
-  height: 470px;
-  padding: 40px;
+  height: 455px;
+  padding-top: 50px;
+  padding-bottom: 34px;
   transform: translate(-50%, -50%);
   background: #FCFCFC;
   box-sizing: border-box;
@@ -12,7 +13,6 @@
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -20,8 +20,8 @@
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
-  margin: 0 0 30px;
   color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 45px;
 }
 
 .login-box p span {
@@ -33,6 +33,7 @@
   font-size: 14px;
   line-height: 16px;
   text-align: center;
+  margin-bottom: 32px;
 }
 
 .login-box form {
@@ -40,10 +41,6 @@
   flex-direction: column;
   align-items: center;
 }
-
-/* .login-box .user-box {
-  position: relative;
-} */
 
 .login-box .user-box input {
   width: 290px;
@@ -56,8 +53,20 @@
   outline: none;
 }
 
+.login-box .user-box-password input {
+  width: 290px;
+  padding: 10px 0;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.44);
+  outline: none;
+}
+
 .user-box {
   position: relative;
+  margin-bottom: 15px;
 }
 
 .user-box::before {
@@ -69,12 +78,41 @@
   margin: auto 0;
   width: 16px;
   height: 16px;
-  /* background: url("https://cdn0.iconfinder.com/data/icons/ThemeShock-credit-cards-icons/64/mastercard.png") no-repeat; */
   background: url('/img/loginIcon.svg') no-repeat;
   background-size: cover;
 }
 
+.user-box-password {
+  position: relative;
+}
+
+.user-box-password::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 25px;
+  right: 7px;
+  margin: auto 0;
+  width: 22px;
+  height: 25px;
+  background: url('/img/eyeIcon.svg') no-repeat;
+  background-size: cover;
+}
+
 .login-box .user-box label {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  padding: 10px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box-password label {
   position: absolute;
   top: -25px;
   left: 0;
@@ -108,6 +146,7 @@
   font-weight: 400;
   color: rgba(0, 0, 0, 0.9);
   transition: box-shadow 1000ms ease-in-out, color 1000ms ease-in-out;
+  margin-bottom: 24px;
 }
 
 .enterButtonForm:hover {

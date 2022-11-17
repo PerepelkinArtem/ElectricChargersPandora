@@ -25,13 +25,13 @@ const Form = () => {
     }, [user, pwd])
 
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        console.log(user, pwd);
-        setUser('');
-        setPwd('');
-        setSuccess(true);
-    }
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     console.log(user, pwd);
+    //     setUser('');
+    //     setPwd('');
+    //     setSuccess(true);
+    // }
 
     // const handleSubmit = async (e) => {
     //     e.preventDefault();
@@ -64,6 +64,18 @@ const Form = () => {
     //     }
     // }
 
+    const [stations, setStt] = useState([])
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const response = axios.post(`/api/login`, `{"login":"a.perepelkin","password":"3f86ou"}`).then(res => {
+            axios.get(`/api/v1/getstations`).then(res => {
+                // setStt(JSON.stringify(res.data));
+                setStt(res.data);
+            });
+        }
+        );
+    }
+    console.log(stations)
     return (
         <>
             {success ? (

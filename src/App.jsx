@@ -16,17 +16,18 @@ function App() {
 //   const [items, setItems] = useState([])
   
 //Рабочий код
-// const [stations, setStt] = useState([])
+const [stations, setStt] = useState([])
 
-//   useEffect(() => {
-//   service.post(`/api/login`, `{"login":"a.perepelkin","password":"3f86ou"}`).then(res => {
-//     service.get(`/api/v1/getstations`).then(res => {
-//       setStt(JSON.stringify(res.data));
-//     });
-//   });
-// }, [])
+  useEffect(() => {
+  service.post(`/api/login`, `{"login":"a.perepelkin","password":"3f86ou"}`).then(res => {
+    service.get(`/api/v1/getstations`).then(res => {
+      // setStt(JSON.stringify(res.data));
+      setStt(res.data);
+    });
+  });
+}, [])
 
-// console.log (stations)
+console.log (stations)
 //Рабочий код
 
   return (
@@ -58,10 +59,10 @@ function App() {
 // }, [])
 
 // Рабочий код
-// const service = axios.create({
-//   timeout: 10000, // request timeout
-//   withCredentials: true
-// });
+const service = axios.create({
+  timeout: 10000, // request timeout
+  withCredentials: true
+});
 // Рабочий код
 
 export default App

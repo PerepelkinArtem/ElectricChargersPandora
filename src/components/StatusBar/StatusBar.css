@@ -9,9 +9,9 @@
     display: flex;
     flex-direction: column;
     margin: 25px auto;
-    padding: 15px;
+    padding: 12px 32px;
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     height: 100%;
     color: #1A1A1A;
     background: #F5F5F5;
@@ -63,12 +63,12 @@
 .statusBarConnectorWrapper {
     display: flex;
     align-items: center;
+    justify-content: space-around;
     margin-top: 15px;
 }
 
 .statusBarConnectorInfo {
     display: flex;
-    margin: 15px 10px;
 }
 
 .statusBarConnectorInfo__dimension {
@@ -80,6 +80,8 @@
 .statusBarConnectorInfo__dimension span {
     margin-bottom: 10px;
     font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .statusBarConnectorInfo__value {
@@ -90,16 +92,54 @@
 
 .statusBarConnectorInfo__value span {
     margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 /*DIAGRAMM*/
 .statusBarDiagramm {
-    width: 230px;
+    width: 300px;
     display: flex;
 }
 
 /*DIAGRAMM*/
 
+
+/* BUTTONS */
 .statusBarButtons {
     display: flex;
+    justify-content: space-between;
+}
+
+/* BUTTONS */
+
+.transactionStatus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.transactionStatus span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.transactionStatus span b {
+    color: #333333;
+    margin-right: 0.5em;
+}
+
+.line {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    /* Параметры линии */
+    margin-bottom: 20px;
+}
+
+.vertical-line {
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+    height: 65px;
+    margin-left: 32px;
 }

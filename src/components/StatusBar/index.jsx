@@ -2,7 +2,6 @@ import React from 'react'
 
 import './StatusBar.css'
 import StatusBarButton from './statusBarButton'
-import StatusBarDiagramm from './statusBarConnector/statusBarDiagramm'
 import StatusBarConnector from './statusBarConnector'
 
 const StatusBar = () => {
@@ -18,8 +17,8 @@ const StatusBar = () => {
                     <StatusBarButton buttonName={'SoftReset'} />
                 </div>
             </div>
-            <StatusBarConnector />
-            <StatusBarConnector />
+            <StatusBarConnector connectorNumber={1} workingStatus={'/img/workingStatus.svg'}/>
+            <StatusBarConnector connectorNumber={2} workingStatus={'/img/unworkingStatus.svg'}/>
         </div >
     )
 }

@@ -4,15 +4,15 @@ import '../StatusBar.css'
 import StatusBarButton from '../statusBarButton'
 import StatusBarDiagramm from './statusBarDiagramm'
 
-const StatusBarConnector = () => {
+const StatusBarConnector = ({ connectorNumber, workingStatus }) => {
     return (
         <div className='statusBarConnector'>
             <div className='statusBarConnectorHeader'>
                 <div className='statusBarConnectorHeader__connector'>
                     <img with={15} height={15} className='userLogo' src='/img/connector.svg' alt='connector' />
-                    <span>Номер коннектора: 1</span>
+                    <span>Номер коннектора: {connectorNumber}</span>
                 </div>
-                <img with={15} height={15} className='userLogo' src='/img/workingStatus.svg' alt='workingStatis' />
+                <img with={15} height={15} className='userLogo' src={workingStatus} alt='workingStatus' />
             </div>
             <div className='statusBarConnectorWrapper'>
                 <div className='statusBarConnectorInfo'>
@@ -27,17 +27,23 @@ const StatusBarConnector = () => {
                         <span>Availablie</span>
                     </div>
                 </div>
+                <div class='vertical-line'></div>
                 <div className='statusBarDiagramm'>
                     <StatusBarDiagramm value={'220v'} />
                     <StatusBarDiagramm value={'40%'} />
                     <StatusBarDiagramm value={'140kW'} />
                 </div>
             </div>
+            <div className='transactionStatus'>
+                <span>Последняя транзакция:</span>
+                <span>ID <b>Available</b>Старт <b>0</b>  Стоп <b>100</b>  Причина <b>Powerloss</b></span>
+            </div>
             <div className='statusBarButtons'>
-                    <StatusBarButton buttonName={'Старт'} />
-                    <StatusBarButton buttonName={'Разблокировать'} />
-                    <StatusBarButton buttonName={'Стоп'} />
-                </div>
+                <StatusBarButton buttonName={'Старт'} />
+                <StatusBarButton buttonName={'Разблокировать'} />
+                <StatusBarButton buttonName={'Стоп'} />
+            </div>
+            <div class='line'></div>
         </div>
     )
 }

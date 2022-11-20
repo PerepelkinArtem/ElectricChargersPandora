@@ -27,7 +27,7 @@ const StatusBarConnector = ({ connectorNumber, workingStatus }) => {
                         <span>Availablie</span>
                     </div>
                 </div>
-                <div class='vertical-line'></div>
+                <div className='vertical-line'></div>
                 <div className='statusBarDiagramm'>
                     <StatusBarDiagramm value={'220v'} />
                     <StatusBarDiagramm value={'40%'} />
@@ -43,7 +43,7 @@ const StatusBarConnector = ({ connectorNumber, workingStatus }) => {
                 <StatusBarButton buttonName={'Разблокировать'} />
                 <StatusBarButton buttonName={'Стоп'} />
             </div>
-            <div class='line'></div>
+            <div className='line'></div>
         </div>
     )
 }

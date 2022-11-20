@@ -33,49 +33,49 @@ const Form = () => {
     //     setSuccess(true);
     // }
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         const response = await axios.post(LOGIN_URL,
-    //             { "login": user, "password": pwd },
-    //             {
-    //                 withCredentials: true
-    //             }
-    //         );
-    //         console.log(JSON.stringify(response));
-    //         //console.log(JSON.stringify(response));
-    //         const accessToken = response.data.accessToken;
-    //         const roles = response.data.roles;
-    //         setAuth({ user, pwd, roles, accessToken });
-    //         setUser('');
-    //         setPwd('');
-    //         setSuccess(true);
-    //     } catch (err) {
-    //         if (!err.response) {
-    //             setErrMsg('No Server Response');
-    //         } else if (err.response.status === 400) {
-    //             setErrMsg('Missing Username or Password');
-    //         } else if (err.response.status === 401) {
-    //             setErrMsg('Unauthorized');
-    //         } else {
-    //             setErrMsg('Login Failed');
-    //         }
-    //         // errRef.current.focus();
-    //     }
-    // }
-
-    const [stations, setStt] = useState([])
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = axios.post(`/api/login`, `{"login":"a.perepelkin","password":"3f86ou"}`).then(res => {
-            axios.get(`/api/v1/getstations`).then(res => {
-                // setStt(JSON.stringify(res.data));
-                setStt(res.data);
-            });
+        try {
+            const response = await axios.post(LOGIN_URL,
+                { "login": user, "password": pwd },
+                {
+                    withCredentials: true
+                }
+            );
+            console.log(JSON.stringify(response));
+            //console.log(JSON.stringify(response));
+            const accessToken = response.data.accessToken;
+            const roles = response.data.roles;
+            setAuth({ user, pwd, roles, accessToken });
+            setUser('');
+            setPwd('');
+            setSuccess(true);
+        } catch (err) {
+            if (!err.response) {
+                setErrMsg('No Server Response');
+            } else if (err.response.status === 400) {
+                setErrMsg('Missing Username or Password');
+            } else if (err.response.status === 401) {
+                setErrMsg('Unauthorized');
+            } else {
+                setErrMsg('Login Failed');
+            }
+            // errRef.current.focus();
         }
-        );
     }
-    console.log(stations)
+
+    // const [stations, setStt] = useState([])
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     const response = axios.post(`/api/login`, `{"login":"a.perepelkin","password":"3f86ou"}`).then(res => {
+    //         axios.get(`/api/v1/getstations`).then(res => {
+    //             // setStt(JSON.stringify(res.data));
+    //             setStt(res.data);
+    //         });
+    //     }
+    //     );
+    // }
+    // console.log(stations)
     return (
         <>
             {success ? (

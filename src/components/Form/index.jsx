@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useContext } from 'react'
+import { Navigate } from 'react-router-dom'
 
 import AuthContext from '../../context/AuthProvider'
 import './Form.css'
@@ -25,14 +26,6 @@ const Form = () => {
     }, [user, pwd])
 
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     console.log(user, pwd);
-    //     setUser('');
-    //     setPwd('');
-    //     setSuccess(true);
-    // }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -42,7 +35,7 @@ const Form = () => {
                     withCredentials: true
                 }
             );
-            console.log(JSON.stringify(response));
+            console.log(response);
             //console.log(JSON.stringify(response));
             const accessToken = response.data.accessToken;
             const roles = response.data.roles;
@@ -64,25 +57,10 @@ const Form = () => {
         }
     }
 
-    // const [stations, setStt] = useState([])
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     const response = axios.post(`/api/login`, `{"login":"a.perepelkin","password":"3f86ou"}`).then(res => {
-    //         axios.get(`/api/v1/getstations`).then(res => {
-    //             // setStt(JSON.stringify(res.data));
-    //             setStt(res.data);
-    //         });
-    //     }
-    //     );
-    // }
-    // console.log(stations)
     return (
         <>
             {success ? (
-                <section>
-                    <h1>Вход выполнен!</h1>
-                    <br />
-                </section>
+                <Navigate to='/' replace={true} />
             ) : (
                 <div className="login-box">
                     <p>Вход в <span>систему</span></p>

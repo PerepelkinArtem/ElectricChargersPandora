@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import './Header.css'
+import AuthContext from '../../context/AuthProvider'
 
 const Header = () => {
 
+    const { auth, setAuth } = useContext(AuthContext)
+    console.log(auth)
     return (
         <header>
             <div className="blueLine">
@@ -22,7 +25,9 @@ const Header = () => {
                     </Link>
                 </div> */}
                 <div className="userArea">
-                    <span>Перепелкин Артем</span>
+                    <span>{auth.user ? `Привет, ${auth.user}` : 'Гость'}</span>
+                    {/* <span>Артем</span> */}
+                    {/* <span>{auth.user}</span> */}
                     <Link to='/login'>
                         <img with={25} height={25} className="userLogo" src="/img/user.svg" alt="UserLogo" />
                     </Link>

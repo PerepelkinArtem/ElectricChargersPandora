@@ -43,6 +43,7 @@ const Form = () => {
             setUser('');
             setPwd('');
             setSuccess(true);
+            console.log(setAuth)
         } catch (err) {
             if (!err.response) {
                 setErrMsg('No Server Response');

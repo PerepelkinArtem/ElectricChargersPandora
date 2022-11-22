@@ -14,28 +14,26 @@ import Home from './pages/Home'
 
 function App() {
 
-//   const [items, setItems] = useState([])
-  
-//Рабочий код
-// const [stations, setStt] = useState([])
+  //   const [items, setItems] = useState([])
 
-//   useEffect(() => {
-//   service.post(`/api/login`, `{"login":"a.perepelkin","password":"3f86ou"}`).then(res => {
-//     service.get(`/api/v1/getstations`).then(res => {
-//       // setStt(JSON.stringify(res.data));
-//       setStt(res.data);
-//     });
-//   });
-// }, [])
+  //Рабочий код
+  // const [stations, setStt] = useState([])
 
-// console.log (stations)
-//Рабочий код
+  //   useEffect(() => {
+  //   service.post(`/api/login`, `{"login":"a.perepelkin","password":"3f86ou"}`).then(res => {
+  //     service.get(`/api/v1/getstations`).then(res => {
+  //       // setStt(JSON.stringify(res.data));
+  //       setStt(res.data);
+  //     });
+  //   });
+  // }, [])
+
+  // console.log (stations)
+  //Рабочий код
 
   return (
     <div className="App">
-      <Header />
-      {/* {stations} */}
-      {/* for testing */}
+        <Header />
       {/* {items.map(items => {
         return (
           <p>{items.data.price}</p>

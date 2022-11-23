@@ -1,20 +1,27 @@
-import React from 'react'
-// import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Route, Routes } from 'react-router-dom'
-// import axios from 'axios'
 
 import './App.css'
 import Header from './components/Header'
 import NoMatchRoute from './pages/NoMatchRoute'
 import Login from './pages/Login'
 import Home from './pages/Home'
+import axios from './api/axios'
+import AuthContext from './context/AuthProvider'
 
-// const baseURL = 'https://622072c8ce99a7de1959cf52.mockapi.io/items'
-// const basePandorURL = 'http://web1.pandora.develop:5003'
+const GET_STATIONS_URL = '/api/v1/getstations'
 
 function App() {
+  const { auth } = useContext(AuthContext)
+  const [stations, setStations] = useState([])
 
-  //   const [items, setItems] = useState([])
+  useEffect(() => {
+    const stationsResponce = axios.get(GET_STATIONS_URL)
+    setStations(stationsResponce)
+  }, [])
+  console.log(stations)
+  console.log(auth)
+
 
   //Рабочий код
   // const [stations, setStt] = useState([])
@@ -31,19 +38,15 @@ function App() {
   // console.log (stations)
   //Рабочий код
 
+
+
   return (
     <div className="App">
-        <Header />
-      {/* {items.map(items => {
-        return (
-          <p>{items.data.price}</p>
-        );
-      })} */}
-      {/* for testing */}
+      <Header />
       {/* <Menu items={['Просмотр станций', 'Управление аккаунтом']} /> */}
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/stations' element={<Home />} />
         <Route path='*' element={<NoMatchRoute />} />
       </Routes>
     </div >

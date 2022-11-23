@@ -15,7 +15,7 @@ const Form = () => {
     const [user, setUser] = useState('')
     const [pwd, setPwd] = useState('')
     const [errMsg, setErrMsg] = useState('')
-    const [success, setSuccess] = useState(false)
+    const [success, setSuccess] = useState('')
 
     useEffect(() => {
         userRef.current.focus();
@@ -35,15 +35,15 @@ const Form = () => {
                     withCredentials: true
                 }
             );
-            console.log(response);
+            console.log(response)
             //console.log(JSON.stringify(response));
-            const accessToken = response.data.accessToken;
-            const roles = response.data.roles;
-            setAuth({ user, pwd, roles, accessToken });
-            setUser('');
-            setPwd('');
-            setSuccess(true);
-            console.log(setAuth)
+            const accessToken = response.data.result.access_expired
+            const refreshToken = response.data.result.refresh_token
+            const roles = response.data.result.roles
+            setAuth({ user, pwd, roles, accessToken, refreshToken })
+            setUser('')
+            setPwd('')
+            setSuccess(true)
         } catch (err) {
             if (!err.response) {
                 setErrMsg('No Server Response');
@@ -57,11 +57,10 @@ const Form = () => {
             // errRef.current.focus();
         }
     }
-
     return (
         <>
             {success ? (
-                <Navigate to='/' replace={true} />
+                <Navigate to='/stations' replace={true} />
             ) : (
                 <div className="login-box">
                     <p>Вход в <span>систему</span></p>

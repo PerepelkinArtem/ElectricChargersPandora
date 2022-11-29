@@ -4,7 +4,7 @@ import './StatusBar.css'
 import StatusBarButton from './statusBarButton'
 import StatusBarConnector from './statusBarConnector'
 
-const StatusBar = () => {
+const StatusBar = (title) => {
     return (
         <div className='statusBar'>
             <span className='statusBar__header'>Зарядная станция 107869544</span>

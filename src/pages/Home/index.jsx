@@ -8,23 +8,6 @@ export default function Home(props) {
 
 const stationsData = props.props.result
 console.log(stationsData)
-// console.log(stationsData.map()) undefined
-
-  // useEffect(() => {
-
-  //   let message = 'один из двух запросов не выполнился - хер на руль ищи ошибку в запросе'
-  //   //console.log('из Home stations:', props)
-
-  // if (props.props){
-  //   console.log(Object.keys(props.props))
-  //   if (props.props.result) {
-  //     message = `идентификатор станции ${props.props.result[0].id}`
-  //   }
-  // }
-  
-  // console.log(message)
-
-  // }, [])
     
     return (
         <div className={styles.mainStation}>
@@ -32,11 +15,9 @@ console.log(stationsData)
                 <StatusBar 
                 key={index}
                 title={item.id}
+                connectorsID={item.connectors}
                 />
             )) }
-            <StatusBar />
-            <StatusBar />
-            <StatusBar />
         </div>
     )
 }

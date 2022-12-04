@@ -4,7 +4,7 @@ import '../StatusBar.css'
 import StatusBarButton from '../statusBarButton'
 import StatusBarDiagramm from './statusBarDiagramm'
 
-const StatusBarConnector = ({ connectorNumber, workingStatus }) => {
+const StatusBarConnector = ({ connectorNumber, workingStatus, voltage_type }) => {
     return (
         <div className='statusBarConnector'>
             <div className='statusBarConnectorHeader'>
@@ -22,7 +22,7 @@ const StatusBarConnector = ({ connectorNumber, workingStatus }) => {
                         <span>СТАТУС</span>
                     </div>
                     <div className='statusBarConnectorInfo__value'>
-                        <span>DC</span>
+                        <span>{voltage_type}</span>
                         <span>CCS Combo 2</span>
                         <span>Availablie</span>
                     </div>

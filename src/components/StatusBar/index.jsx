@@ -4,9 +4,7 @@ import './StatusBar.css'
 import StatusBarButton from './statusBarButton'
 import StatusBarConnector from './statusBarConnector'
 
-const StatusBar = ({title}) => {
-
-    console.log(title)
+const StatusBar = ({ title, connectorsID }) => {
 
     return (
         <div className='statusBar'>
@@ -20,6 +18,13 @@ const StatusBar = ({title}) => {
                     <StatusBarButton buttonName={'SoftReset'} />
                 </div>
             </div>
+            {connectorsID && connectorsID.map((item, index) => (
+                <StatusBarConnector
+                    key={index}
+                    connectorNumber={item.number}
+                    voltage_type={item.voltage_type.name}
+                />
+            ))}
             <StatusBarConnector connectorNumber={1} workingStatus={'/img/workingStatus.svg'} />
             <StatusBarConnector connectorNumber={2} workingStatus={'/img/unworkingStatus.svg'} />
         </div >

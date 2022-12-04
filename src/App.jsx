@@ -19,8 +19,7 @@ function App() {
     const stationsResponce = axios
       .get(GET_STATIONS_URL)
       // .then(data => data.data.result)
-      // .then(data => data.data.result)
-      .then((response) => { setStations(response) })
+      .then((response) => { setStations(response.data) })
   }, [auth])
   // console.log('из App - ', auth)
   // console.log('из App - stations: ', stations)
@@ -51,7 +50,7 @@ function App() {
       {/* <Menu items={['Просмотр станций', 'Управление аккаунтом']} /> */}
       <Routes>
         <Route path='/' element={<Login />} />
-        <Route path='/stations' element={<Home stations={stations} />} />
+        <Route path='/stations' element={<Home props={stations} />} />
         <Route path='*' element={<NoMatchRoute />} />
       </Routes>
     </div >

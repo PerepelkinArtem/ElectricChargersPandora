@@ -1,39 +1,42 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import styles from './Home.module.css'
 import StatusBar from '../../components/StatusBar'
 // import AuthContext from '../../context/AuthProvider'
 
-const Home = (stations) => {
-    console.log ('из Home stations:', stations)
-    // Object.keys(stations).map(x => (console.log(x)))
-    Object.entries(stations).map(x => (console.log(x)))
+export default function Home(props) {
 
+const stationsData = props.props.result
+console.log(stationsData)
+// console.log(stationsData.map()) undefined
+
+  // useEffect(() => {
+
+  //   let message = 'один из двух запросов не выполнился - хер на руль ищи ошибку в запросе'
+  //   //console.log('из Home stations:', props)
+
+  // if (props.props){
+  //   console.log(Object.keys(props.props))
+  //   if (props.props.result) {
+  //     message = `идентификатор станции ${props.props.result[0].id}`
+  //   }
+  // }
+  
+  // console.log(message)
+
+  // }, [])
+    
     return (
         <div className={styles.mainStation}>
-            {Object.entries(stations).map(x =>(
-                // <StatusBar 
-                // title={x.}
-                // />
-                console.log(x[1].data)
-                // <div>
-                //     <h1>x.stations</h1>
-                // </div>
+            {stationsData && stationsData.map((item, index) => (
+                <StatusBar 
+                key={index}
+                title={item.id}
+                />
             )) }
-                {/* {Promise.all.stations.result.map((item, index) => (
-                    <StatusBar
-                        key={index}
-                        // title={item.result.id}
-                        // // price={item.price}
-                        // imageUrl={item.imageUrl}
-                        {...item}
-                    />
-                ))} */}
             <StatusBar />
             <StatusBar />
             <StatusBar />
         </div>
     )
 }
-
-export default Home
